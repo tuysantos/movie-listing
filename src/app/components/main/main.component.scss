@@ -1,0 +1,80 @@
+.main-container {
+    min-height: 600px;
+    margin: 10px;
+
+    .movie-title {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    .filter-genre-wrapper {
+        padding: 20px;
+        border: 1px solid #c0c0c0;
+        .item-list {
+            display: block;
+        }
+    }
+
+    .card-wrapper {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+    
+        .card-container {
+            display: inline-block;
+            width: 150px;
+            border: 1px solid #c0c0c0;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px;
+            min-height: 380px;
+            vertical-align: top;
+            @media screen and (max-width: 450px) {
+                width: 300px;
+            }
+    
+            .genre-container {
+                display: inline-block; 
+                list-style: none; 
+                padding-left: 0px;
+                padding-left: 10px;
+    
+                .genre-card {
+                    font-size: 1em;
+                    margin: 0;
+                    padding: 0;
+                    color: rgba(0,0,0,0.6);
+                    display: inline-block; 
+                    margin-right: 5px;
+                }
+            }
+            .img-card {
+                display: inline;
+                width: 150px;
+                @media screen and (max-width: 450px) {
+                    width: 300px;
+                }
+            }
+            
+            .title-card {
+                font-weight: 700;
+                color: #000;
+                display: flex;
+                align-content: flex-start;
+                padding-left: 10px;
+            }
+            .rate-container {
+                margin-bottom: 10px;
+                margin-left: 10px;
+                .rate-title {
+                    font-size: 10px;
+                }
+                .rate-stars {
+                    font-size: 9px;
+                    color: green;
+                }
+            }
+            }
+    }
+}
+
+

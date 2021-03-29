@@ -1,10 +1,18 @@
-# MovieListing
+# Movie Now Playing
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
-## Development server
+This project uses the following tools and technologies:
+- Angular 11
+- Angular Material 11
+- RxJs 6.6.0
+- TypeScript 4.1.2
+- Json Server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Development server
+Run `json-server --watch db.json` before the application It will be listen at port `http://localhost:3000/`.
+Run `ng serve` for the app. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -17,10 +25,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 

@@ -1,0 +1,53 @@
+
+
+<mat-drawer-container class="main-container">
+    <!-- side navigation-->
+    <mat-drawer mode="side" [opened]="isDesktop || isVisible">
+
+        <div class="filter-genre-wrapper">
+            <span>Filters</span>
+            <mat-checkbox *ngFor="let item of genreList" (click)="addRemoveToFilter(item.id)" class="item-list">{{item.name}}</mat-checkbox>
+        </div>
+        <div>
+            0<mat-slider #gridsize (change)="updateSetting($event)" step="0.5" min="0" max="10" [value]="rate"></mat-slider>10
+            <div>
+                <span>Current rate: </span><b class="gridSizeValue">{{gridsize.value}}</b>
+            </div>
+        </div>
+    </mat-drawer>
+
+    <!-- content navigation-->
+    <mat-drawer-content>
+        <div *ngIf="!isDesktop">
+            <button mat-icon-button color="primary" (click)="toggleMenu()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <div class="movie-title">
+            <label>Movies Playing Now</label>
+        </div>
+        <div class="card-wrapper">
+            <div *ngFor="let item of displayList" style="display: inline-block;">
+                <mat-card class="card-container">
+                    <img mat-card-image  src="../../../assets/images{{item.poster_path}}" alt="item.title" class="img-card">
+                    <mat-card-content>
+                        <mat-card-title class="title-card">{{item.title}}</mat-card-title>
+                        <mat-divider></mat-divider>
+                        <ul class="genre-container">
+                            <li *ngFor="let genre of item.genre_ids" class="genre-card">{{getGenreById(genre)}},</li>
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="rate-container">
+                            <span class="rate-title">Rate:</span>
+                            <span class="material-icons rate-stars" *ngFor="let in of counter(item.vote_average) ;let i = index">star_rate</span>
+                            <span *ngIf="item.vote_average % floorNumber(item.vote_average) > 0" class="material-icons rate-stars">star_half</span>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+
+    </mat-drawer-content>
+
+  </mat-drawer-container>
